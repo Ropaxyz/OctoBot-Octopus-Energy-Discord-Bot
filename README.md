@@ -79,4 +79,4 @@ If you encounter any issues or have questions, please [open an issue](https://gi
 
 ## Author
 
-[Ropaxyz](https://github.com/Ropaxyz)
+[Ropaxyz/Ross Paxton](https://github.com/Ropaxyz)
