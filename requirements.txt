@@ -1,0 +1,7 @@
+discord.py
+asyncio
+aiohttp
+sqlalchemy
+matplotlib
+python-dotenv
+gql[aiohttp]
