@@ -6,10 +6,16 @@ OctoBot is a Discord bot that integrates with the Octopus Energy API to provide 
 
 - Easy account setup through Discord commands or button interactions
 - Retrieval of energy consumption data for electricity and gas
-- Generation of consumption charts for visual representation
+- Generation of consumption charts with improved visualizations using Seaborn
 - Calculation of energy costs based on consumption and tariff data
 - Support for different time periods (7, 30, or 90 days)
 - Secure storage of user API keys and account numbers
+- Improved error handling and data validation
+- Caching system for better performance
+- Detailed logging system
+- Automatic timezone handling
+- Retry mechanism for API requests
+- Rate limiting and cooldown system
 
 ## Prerequisites
 
@@ -30,17 +36,35 @@ OctoBot is a Discord bot that integrates with the Octopus Energy API to provide 
    pip install -r requirements.txt
    ```
 
-3. Create a `.env` file in the root directory and add your Discord Bot Token:
+3. Create a `.env` file in the root directory with the following variables:
    ```
    DISCORD_BOT_TOKEN=your_discord_bot_token_here
+   DATABASE_URL=sqlite:///user_data.db
+   SETUP_CHANNEL_ID=your_channel_id_here
    ```
 
-4. Update the channel ID:
-   Open `octopus_energy_bot.py` and locate the line:
-   ```python
-   channel = bot.get_channel(1298013819188154398)
-   ```
-   Replace `1298013819188154398` with the ID of the channel where you want the setup button to appear in your Discord server.
+## Features and Improvements
+
+### New Features
+- Improved error handling with detailed logging
+- Data caching system using TTLCache
+- Automatic retry mechanism for failed API requests
+- Enhanced visualization using Seaborn
+- Combined charts for electricity and gas data
+- Better date handling with timezone support
+- Input validation for API keys and account numbers
+- Cooldown system for commands
+- Improved setup process with validation
+- Warning system for potentially incomplete data
+
+### Technical Improvements
+- Modular code structure with separate classes
+- Type hints and dataclasses
+- Comprehensive error logging
+- Better database schema with timestamps
+- Configurable timeouts and retry policies
+- GraphQL query optimization
+- Improved API client with connection pooling
 
 ## Usage
 
@@ -51,16 +75,35 @@ OctoBot is a Discord bot that integrates with the Octopus Energy API to provide 
 
 2. Invite the bot to your Discord server using the OAuth2 URL generated in the Discord Developer Portal.
 
-3. The bot will automatically post a setup button in the channel you specified. Users can click this button to set up their Octopus Energy account.
+3. The bot will automatically create a setup button in the configured channel.
 
-4. Alternatively, users can use the `/setup` command in Discord to configure their Octopus Energy account.
+4. Users can set up their accounts either through:
+   - Clicking the setup button
+   - Using the `/setup` command
+   - Setting up via DM
 
-5. Use the `/get_energy_data` command to retrieve energy consumption data and charts.
+5. Use `/get_energy_data` to retrieve energy consumption data and charts:
+   - Choose between electricity, gas, or both
+   - Select time period (7, 30, or 90 days)
+   - View consumption charts and cost analysis
 
-## Commands
+## Command Reference
 
-- `/setup`: Set up your Octopus Energy account credentials
-- `/get_energy_data`: Retrieve energy consumption data and charts
+### User Commands
+- `/setup` - Configure your Octopus Energy account
+- `/get_energy_data` - Get energy consumption data and analysis
+
+### Admin Commands
+- `!setup_button` - Create a setup button in the current channel (Admin only)
+
+## Error Handling
+
+The bot now includes comprehensive error handling:
+- API timeouts and retry mechanism
+- Invalid credentials handling
+- Rate limiting protection
+- Data validation
+- User-friendly error messages
 
 ## Contributing
 
@@ -74,18 +117,11 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 This bot is not officially affiliated with Octopus Energy. Use at your own risk.
 
-## Acknowledgements
-
-- [Octopus Energy API](https://developer.octopus.energy/docs/api/)
-- [Discord.py](https://discordpy.readthedocs.io/)
-- [SQLAlchemy](https://www.sqlalchemy.org/)
-- [Matplotlib](https://matplotlib.org/)
-
 ## Support
 
-If you encounter any issues or have questions, please [open an issue](https://github.com/Ropaxyz/OctoBot-Octopus-Energy-Discord-Bot/issues) on GitHub.
-
-You can also join our Discord server for support and discussions: [https://discord.gg/3ZCtSyMCp3](https://discord.gg/3ZCtSyMCp3)
+If you encounter any issues or have questions:
+- [Open an issue](https://github.com/Ropaxyz/OctoBot-Octopus-Energy-Discord-Bot/issues) on GitHub
+- Join our Discord server: [https://discord.gg/3ZCtSyMCp3](https://discord.gg/3ZCtSyMCp3)
 
 ## Author
 
