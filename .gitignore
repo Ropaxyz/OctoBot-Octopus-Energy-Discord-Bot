@@ -1,28 +1,122 @@
-# Byte-compiled / optimized / DLL files
-__pycache__/
-*.py[cod]
-*$py.class
-
-# Virtual environment
-venv/
-env/
-
 # Environment variables
 .env
 
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv/
+.env/
+env.bak/
+venv.bak/
+
 # Database
 *.db
+*.db-journal
+*.sqlite
+*.sqlite3
 
-# IDE files
-.vscode/
+# IDE specific files
 .idea/
+.vscode/
+*.swp
+*.swo
+.project
+.pydevproject
+.settings/
+.vs/
 
 # Logs
 *.log
+logs/
+log/
 
-# Temporary files
-*.tmp
+# Charts and temporary files
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.pdf
+*.svg
+temp/
+tmp/
 
-# Operating system files
+# Operating System
 .DS_Store
 Thumbs.db
+desktop.ini
+
+# Testing
+.coverage
+htmlcov/
+.tox/
+.pytest_cache/
+coverage.xml
+*.cover
+.hypothesis/
+
+# Distribution / packaging
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
+# dotenv environment variables file
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Local development settings
+local_settings.py
+
+# Session files
+*.session
+*.session-journal
+
+# Backup files
+*.bak
+*.backup
+*~
