@@ -5,3 +5,8 @@ sqlalchemy
 matplotlib
 python-dotenv
 gql[aiohttp]
+seaborn
+cachetools
+pytz
+backoff
+pandas
