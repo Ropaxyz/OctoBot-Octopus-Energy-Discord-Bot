@@ -1,5 +1,7 @@
 # OctoBot: Octopus Energy Discord Bot
 
+![image](https://github.com/user-attachments/assets/65a5227b-4a8f-40a8-b111-83253163159a)
+
 OctoBot is a Discord bot that integrates with the Octopus Energy API to provide users with their energy consumption data and costs directly within Discord. This bot allows users to set up their Octopus Energy accounts and retrieve detailed information about their electricity and gas usage.
 
 ## Features
